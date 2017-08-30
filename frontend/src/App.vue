@@ -1,60 +1,96 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
-  </div>
+    <div class="container" id="app">
+        <navbar></navbar>
+    </div>
 </template>
 
 <script>
+import Navbar from './components/Navbar.vue';
 export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+    components: {
+        'navbar': Navbar
     }
-  }
 }
 </script>
-
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+/* Space out content a bit */
+body {
+padding-top: 20px;
+padding-bottom: 20px;
 }
 
-h1, h2 {
-  font-weight: normal;
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+padding-right: 15px;
+padding-left: 15px;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+/* Custom page header */
+.header {
+padding-bottom: 20px;
+border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+margin-top: 0;
+margin-bottom: 0;
+line-height: 40px;
 }
 
-li {
-  display: inline-block;
-  margin: 0 10px;
+/* Custom page footer */
+.footer {
+padding-top: 19px;
+color: #777;
+border-top: 1px solid #e5e5e5;
 }
 
-a {
-  color: #42b983;
+/* Customize container */
+@media (min-width: 768px) {
+.container {
+max-width: 730px;
 }
+}
+.container-narrow > hr {
+margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+text-align: center;
+border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+padding: 14px 24px;
+font-size: 21px;
+}
+
+/* Supporting marketing content */
+.marketing {
+margin: 40px 0;
+}
+.marketing p + h4 {
+margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+/* Remove the padding we set earlier */
+.header,
+.marketing,
+.footer {
+padding-right: 0;
+padding-left: 0;
+}
+/* Space out the masthead */
+.header {
+margin-bottom: 30px;
+}
+/* Remove the bottom border on the jumbotron for visual effect */
+.jumbotron {
+border-bottom: 0;
+}
+}
+
 </style>

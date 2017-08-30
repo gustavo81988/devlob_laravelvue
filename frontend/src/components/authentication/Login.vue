@@ -19,7 +19,7 @@
                             placeholder="Password"
                         >
                     </div>
-                    <button class="btn btn-success">Login</button>
+                    <button @click="test" class="btn btn-success">Login</button>
                 </div>
             </div>
         </div>
@@ -32,6 +32,13 @@ export default {
         return{
             email: '',
             password: ''
+        }
+    },
+    methods: {
+        test(){
+            this.$http.get("http://localhost/devlob_laravelvue/public/api/test").then( (response) => {
+                console.log(response);
+            });
         }
     }
 }

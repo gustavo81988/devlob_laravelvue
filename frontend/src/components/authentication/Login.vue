@@ -19,7 +19,7 @@
                             placeholder="Password"
                         >
                     </div>
-                    <button @click="test" class="btn btn-success">Login</button>
+                    <button @click="login" class="btn btn-success">Login</button>
                 </div>
             </div>
         </div>
@@ -35,10 +35,20 @@ export default {
         }
     },
     methods: {
-        test(){
-            this.$http.get("http://localhost/devlob_laravelvue/public/api/test").then( (response) => {
+        login(){
+            let data = {
+                client_id     : 2,
+                client_secret : 'Ssak3Tptso5VwxVEeHAy0UDykmnKPAQYii7V72hx',
+                grant_type    : 'password',
+                username      : this.email,
+                password      : this.password
+            }
+            
+            
+            this.$http.post("http://localhost/devlob_laravelvue/public/oauth/token",data).then( (response) => {
                 console.log(response);
             });
+            
         }
     }
 }
